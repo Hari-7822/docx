@@ -2,7 +2,8 @@ import os
 from docx import Document
 
 
-doc = Document('/home/hari/Documents/python/docx/src/hello.docx')
+file = '/home/hari/Documents/python/docx/src/hello.docx'
+doc = Document(file)
 
 txt = []
 
@@ -18,8 +19,9 @@ for i in doc.paragraphs:
         if elem:
     
             txt.append(elem)
-            
-        
 
+
+file2 = open('/home/hari/Documents/python/docx/txt/hello.txt', 'w')
+            
 for d in txt:
-    print(d)
+    file2.write(d+'\n')
