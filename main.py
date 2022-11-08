@@ -1,8 +1,9 @@
 import os
 from docx import Document
 
+base = os.path.abspath('/home/hari/Documents/python/docx/')
 
-file = '/home/hari/Documents/python/docx/src/hello.docx'
+file = os.path.join(base, 'src/hello.docx')
 doc = Document(file)
 
 txt = []
@@ -21,7 +22,7 @@ for i in doc.paragraphs:
             txt.append(elem)
 
 
-file2 = open('/home/hari/Documents/python/docx/txt/hello.txt', 'w')
+file2 = open(os.path.join(base, 'txt/hello.txt'), 'w')
             
 for d in txt:
     file2.write(d+'\n')
